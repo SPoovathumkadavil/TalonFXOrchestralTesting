@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
+
   private RobotContainer robotContainer;
   private Command autonomousCommand;
 
@@ -43,7 +44,6 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run();
   }
 
-
   @Override
   public void autonomousInit() {
     autonomousCommand = robotContainer.getAutonomousCommand();
@@ -56,9 +56,7 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {
-
-  }
+  public void autonomousPeriodic() {}
 
   /** This function is called once when teleop is enabled. */
   @Override
@@ -69,6 +67,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+    robotContainer.teleopPeriodic();
   }
 
   /** This function is called once when the robot is disabled. */

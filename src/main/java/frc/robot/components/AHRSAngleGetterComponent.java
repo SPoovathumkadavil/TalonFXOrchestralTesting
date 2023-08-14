@@ -16,30 +16,31 @@ import edu.wpi.first.wpilibj.SPI.Port;
  */
 public class AHRSAngleGetterComponent extends AHRS {
 
-    /**
-     * @see AHRS#AHRS(Port)
-     */
-    public AHRSAngleGetterComponent(edu.wpi.first.wpilibj.I2C.Port kmxp) {
-        super(kmxp);
-    }
-    public AHRSAngleGetterComponent(Port kmxp) {
-        super(kmxp);
-    }
+  /**
+   * @see AHRS#AHRS(Port)
+   */
+  public AHRSAngleGetterComponent(edu.wpi.first.wpilibj.I2C.Port kmxp) {
+    super(kmxp);
+  }
 
-    @Override
-    public double getAngle() {
-        return -Math.toRadians(super.getAngle());
-    }
+  public AHRSAngleGetterComponent(Port kmxp) {
+    super(kmxp);
+  }
 
-    @Override
-    public float getPitch() {
-        return (float) Math.toRadians(super.getPitch());
-    }
+  @Override
+  public double getAngle() {
+    return -Math.toRadians(super.getAngle());
+  }
 
-    @Override
-    public float getRoll() {
-        return (float) Math.toRadians(super.getRoll());
-    }
+  @Override
+  public float getPitch() {
+    return (float) Math.toRadians(super.getPitch());
+  }
 
-    public void reset() {}
+  @Override
+  public float getRoll() {
+    return (float) Math.toRadians(super.getRoll());
+  }
+
+  public void reset() {}
 }
