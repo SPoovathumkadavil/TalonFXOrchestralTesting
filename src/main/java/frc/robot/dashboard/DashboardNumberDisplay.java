@@ -6,15 +6,15 @@ import java.util.function.DoubleSupplier;
 
 public class DashboardNumberDisplay implements Sendable {
 
-  DoubleSupplier number;
-  String name;
+	DoubleSupplier number;
+	String name;
 
-  public DashboardNumberDisplay(String name, DoubleSupplier number) {
-    this.name = name;
-    this.number = number;
-  }
+	public DashboardNumberDisplay(String name, DoubleSupplier number) {
+		this.name = name;
+		this.number = number;
+	}
 
-  public void initSendable(SendableBuilder builder) {
-    builder.addDoubleProperty(name, number, null);
-  }
+	public void initSendable(SendableBuilder builder) {
+		builder.addDoubleProperty(name, number, null);
+	}
 }
